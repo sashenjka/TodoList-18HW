@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Note</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="container mt-5">
+
+<div class="card shadow" style="background: linear-gradient(to right, #4e89ae, #43658b);">
+    <div class="card-header shadow">
+        <h2 class="text-center text-white">Create New Note</h2>
+    </div>
+    <div class="card-body">
+
+        <form th:action="@{/note/create}" method="post">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" name="title" required/>
+            </div>
+            <div class="form-group">
+                <label for="content">Content:</label>
+                <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-warning btn-lg">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
+<a class="btn btn-secondary mt-3" th:href="@{/note/list}">🔙 Back to List</a>
+
+</body>
+</html>
